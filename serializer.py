@@ -15,10 +15,10 @@ def parse(msg):
     protocol = cmd[0]
     version = cmd[1]
     call = cmd[2]
-    headersLen = int(cmd[3])
-    bodyLen = int(cmd[4])
-    headers = payload[0 : headersLen]
-    body = payload[headersLen : bodyLen + headersLen]
+    headers_len = int(cmd[3])
+    body_len = int(cmd[4])
+    headers = payload[0 : headers_len]
+    body = payload[headers_len : body_len + headers_len]
 
     request = Request(protocol, call, version, headers, body)
     return request.__dict__
@@ -33,10 +33,8 @@ def marshall(msg):
         body = msg.get("body")
 
         # If both headers and body are present then return by inserting a new line between them
-        extra_line = "\n" if (len(headers) != 0 and len(body) != 0) else ""
+        l_1 = len(headers)
+        l_2 = len(body)
+        extra_line = "\n" if (l_1 != 0 and l_2 != 0) else ""
         message = "{} {} {} {} {}\n{}" + extra_line + "{}"
         return message.format(protocol, version, call, len(headers), len(body), headers, body)
-
-
-
-
