@@ -1,5 +1,5 @@
 ''' Defining methods to encode and decode messages '''
-from hobbits.message import Request
+from message import Request
 
 
 def parse(msg):

@@ -1,8 +1,8 @@
 ''' Hobbits unit tests '''
 from __future__ import print_function
 import queue
-from hobbits.serializer import parse, marshall
-from hobbits.server import start_server, start_client
+from serializer import parse, marshall
+from server import start_server, start_client
 
 
 def test_parsing():
@@ -65,3 +65,10 @@ def test_tcp():
     result = que.get()
     if result != msg:
         raise AssertionError()
+
+
+if __name__ == "__main__":
+    test_parsing()
+    test_marshall()
+    test_tcp()
+    print("All tests passed")
