@@ -1,6 +1,11 @@
 # Hobbits.py
+[![Build Status](https://travis-ci.org/nanspro/Hobbits.py.svg?branch=master)](https://travis-ci.org/nanspro/Hobbits.py/)
+
 Python implementation of hobbits(wire protocol for ethereum 2.0 network testing)
 
+## Perfomance
+- [Code Review](https://app.codacy.com/project/nanspro/Hobbits.py/dashboard?bid=13130041)
+- Pylint Score 9.87 / 10
 ## Prerequisites
 - Python3
 
@@ -37,3 +42,7 @@ while True:
     data = conn.recv(4096)
     msg += data.decode('utf-8')
 ```
+
+## License
+
+MIT &copy; [Pegasys](https://pegasys.tech/)
