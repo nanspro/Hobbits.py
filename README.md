@@ -31,16 +31,21 @@ print(decoded)
 
 Here is a demo server
 ```python
-server = create()
-server.bind(('127.0.0.1', 9000))    
-server.listen(10)
+SERVER = create()
+SERVER.bind(('127.0.0.1', 9000))    
+SERVER.listen(10)
 
 while True:
-    conn, addr = server.accept()
+    CONN, ADDR = SERVER.accept()
     print("Received client's request")
-    msg = ''
-    data = conn.recv(4096)
-    msg += data.decode('utf-8')
+    MSG = ''
+    while True:
+        DATA = CONN.recv(4096)
+        print(DATA)
+        if not DATA:
+            break
+        MSG += DATA.decode('utf-8')
+    print(MSG)
 ```
 
 ## License
